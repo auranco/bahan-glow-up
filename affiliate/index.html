@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Affiliate Collections</title>
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '-apple-system', BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #111;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Profil */
+        .header {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .header img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 0.85rem;
+            color: #767676;
+            margin-top: 5px;
+        }
+
+        /* Tombol Kembali yang Elegan */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #111;
+            cursor: pointer;
+            margin-bottom: 20px;
+            padding: 8px 0;
+        }
+
+        /* ==================== 1. HALAMAN DEPAN (FOLDER) ==================== */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        /* Kotak Kelompok/Folder */
+        .folder-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+            border: 1px solid #eee;
+        }
+        .folder-card:hover {
+            transform: translateY(-2px);
+        }
+        .folder-banner {
+            width: 100%;
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+        }
+        .folder-info {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .folder-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .folder-info span {
+            font-size: 0.8rem;
+            color: #767676;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        /* ==================== 2. HALAMAN DALAM FOLDER (PINTEREST GRID) ==================== */
+        .pinterest-grid {
+            column-count: 2;
+            column-gap: 14px;
+        }
+        .pin-card {
+            break-inside: avoid;
+            background-color: #ffffff;
+            margin-bottom: 16px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .pin-card img {
+            width: 100%;
+            display: block;
+        }
+        .pin-info {
+            padding: 10px;
+        }
+        .pin-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            color: #212121;
+        }
+        .buy-btn {
+            display: block;
+            background-color: #e60023;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px;
+            border-radius: 18px;
+        }
+
+        /* Logika Sembunyikan Halaman */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header">
+            <img src="LOGO.jpeg" alt="Profile">
+            <h1>@aura_n.co</h1>
+            <p>Klik kategori di bawah untuk lihat rekomendasi produk ✨</p>
+        </div>
+
+
+        <div id="halaman-depan" class="folder-grid">
+            
+            <div class="folder-card" onclick="bukaFolder('folder-parfum')">
+                <div class="folder-banner" style="background-image: url('profile parfum.webp');"></div>
+                <div class="folder-info">
+                    <h3>PARFUM NIH BIAR LU PEDE(UNISEX) 🌸</h3>
+                </div>
+            </div>
+
+            <div class="folder-card" onclick="bukaFolder('folder-fashion')">
+                <div class="folder-banner" style="background-image: url('produk skincare.jpg');"></div>
+                <div class="folder-info">
+                    <h3>BAHAN GLOW UP MU!</h3>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="folder-parfum" class="hidden">
+            <button class="back-btn" onclick="kembaliKeDepan()">← Kembali ke Kategori</button>
+            
+            <div class="pinterest-grid">
+                <div class="pin-card">
+                    <img src="P1.jpeg" alt="Parfum 1">
+                    <div class="pin-info">
+                        <div class="pin-title">Parfum ALPHA HMNS Inspired Perfume</div>
+                        <a href="https://s.shopee.co.id/1LczsGpEKm" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+                <div class="pin-card">
+                    <img src="P2.jpeg" alt="Parfum 2">
+                    <div class="pin-info">
+                        <div class="pin-title">Parfum HVM OCEAN Extrait de Parfum</div>
+                        <a href="https://s.shopee.co.id/7fX3SegO2t" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+                <div class="pin-card">
+                    <img src="P3.jpeg" alt="Parfum 3">
+                    <div class="pin-info">
+                        <div class="pin-title">Zataru Signature - Aquamarine Extrait de ParfuM</div>
+                        <a href="https://s.shopee.co.id/LkSjbNr9E" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+                <div class="pin-card">
+                    <img src="c:\Users\SMC\Downloads\WhatsApp Image 2026-05-30 at 10.29.31.jpeg" alt="Parfum 4">
+                    <div class="pin-info">
+                        <div class="pin-title">MINISO Parfum Pria Bold Adventurous Perfume</div>
+                        <a href="https://s.shopee.co.id/qgjJyO8bP" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="folder-fashion" class="hidden">
+            <button class="back-btn" onclick="kembaliKeDepan()">← Kembali ke Kategori</button>
+            
+            <div class="pinterest-grid">
+                <div class="pin-card">
+                    <img src="c:\Users\SMC\Downloads\WhatsApp Image 2026-05-30 at 10.50.56.jpeg" alt="Fashion 1">
+                    <div class="pin-info">
+                        <div class="pin-title">Barber Daily face wash</div>
+                        <a href="https://s.shopee.co.id/8pj0s98Pi9" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+                <div class="pin-card">
+                    <img src="c:\Users\SMC\Downloads\skincare2.jpg" alt="Fashion 2">
+                    <div class="pin-info">
+                        <div class="pin-title">Sombong 5-in-1 face wash</div>
+                        <a href="https://s.shopee.co.id/1BJZkOkEc4" target="_blank" class="buy-btn">Beli di Shopee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Fungsi untuk membuka folder tertentu
+        function bukaFolder(idFolder) {
+            // Sembunyikan halaman depan
+            document.getElementById('halaman-depan').classList.add('hidden');
+            
+            // Tampilkan folder yang dipilih
+            document.getElementById(idFolder).classList.remove('hidden');
+            
+            // Otomatis scroll ke atas pas diklik
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Fungsi untuk kembali ke halaman daftar folder utama
+        function kembaliKeDepan() {
+            // Sembunyikan semua folder isi produk yang sedang aktif
+            document.getElementById('folder-parfum').classList.add('hidden');
+            document.getElementById('folder-fashion').classList.add('hidden');
+            
+            // Tampilkan kembali halaman utama
+            document.getElementById('halaman-depan').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
